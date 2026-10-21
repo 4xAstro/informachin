@@ -1,0 +1,125 @@
+/* 1. Tes couleurs, définies une seule fois */
+:root {
+  --fond: #0e0e10;
+  --texte: #e8e6e3;
+  --accent: #c8a15a;
+}
+
+/* 2. Réglages de base pour toute la page */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--fond);
+  color: var(--texte);
+  font-family: Georgia, serif;
+  line-height: 1.7;
+}
+
+/* 3. Le grand bandeau d'intro */
+.hero {
+  min-height: 100vh;          /* prend tout l'écran */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.petit-titre {
+  color: var(--accent);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 8vw, 6rem);   /* s'adapte à l'écran */
+  margin: 1rem 0;
+}
+
+.accroche {
+  max-width: 500px;
+  opacity: 0.8;
+}
+
+/* 4. Les sections de texte */
+.chapitre {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 5rem 1.5rem;
+}
+
+.numero {
+  color: var(--accent);
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+}
+
+.chapitre h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0 1.5rem;
+}
+
+.chapitre p {
+  margin-bottom: 1.2rem;
+}
+
+css
+.etape {
+  border-left: 2px solid var(--accent);
+  padding: 0 0 2rem 1.5rem;
+}
+
+.date {
+  color: var(--accent);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.etape h3 {
+  margin: 0.3rem 0;
+}
+
+.grille {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.carte {
+  display: block;
+  padding: 1.5rem;
+  border: 1px solid #333;
+  border-radius: 12px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.carte:hover {
+  transform: translateY(-6px);
+  border-color: var(--accent);
+}
+
+.role {
+  color: var(--accent);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
